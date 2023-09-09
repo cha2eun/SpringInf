@@ -12,6 +12,7 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+// 팩토리 메서드 방식 ! ! ! !
 // 의존관계 주입
 @Configuration
 public class AppConfig {
