@@ -19,8 +19,13 @@ public class AppConfig {
     // Bean 어노테이션 등록하면 메소드명이 key, return값이 value로 bean등록됨
     // 중복제거하고 한곳만 바꿀 수 있도록 리팩터링
     // 추후 구현체가 바뀌어도 AppConfig의 여기만 바꾸면 됨
+
+    // @Bean memberService -> new MemoryMemberRepository()
+    // @Bean orderService -> new MemoryMemberRepository()
+
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean
@@ -33,10 +38,12 @@ public class AppConfig {
     // 생성자 주입
     @Bean
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 }
