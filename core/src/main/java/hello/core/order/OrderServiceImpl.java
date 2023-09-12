@@ -6,7 +6,7 @@ import hello.core.member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component//("serivce")  ; ConflictingBeanDefinitionException 테스트용
 public class OrderServiceImpl implements OrderService{
 //    private final MemberRepository memberRepository = new MemoryMemberRepository();
 //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();

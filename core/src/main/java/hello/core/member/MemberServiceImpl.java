@@ -3,7 +3,7 @@ package hello.core.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component//("serivce") ; ConflictingBeanDefinitionException 테스트용
 public class MemberServiceImpl implements  MemberService{
     // 실제 할당시 구현체에 의존함 ->DIP 위반
 //    private final MemberRepository memberRepository = new MemoryMemberRepository();
